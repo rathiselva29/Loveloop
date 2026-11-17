@@ -1,0 +1,6 @@
+{
+  "name": "LoveLoop",
+  "description": "A premium romantic messenger application designed exclusively for couples featuring real-time simulated dual-partner spaces, AI love letters, date planners, romantic timeline memories, quizzes, games, and relationship growth indicators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-romantic: #FF4D8D;
+  --color-romantic-light: #FF8FB8;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 77, 141, 0.2);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 77, 141, 0.4);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dark .glass-panel {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-heavy {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.dark .glass-panel-heavy {
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Sparkle & Glow Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 77, 141, 0.3), 0 0 20px rgba(255, 77, 141, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 77, 141, 0.6), 0 0 30px rgba(255, 77, 141, 0.4);
+    transform: scale(1.03);
+  }
+}
+
+.romantic-glow-text {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Floating Hearts Animations */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) translateX(var(--float-x, 40px)) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -50px;
+  animation: floatUp 15s infinite linear;
+  color: #FF4D8D;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle Animated Background Gradients */
+@keyframes waveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-romantic-bg {
+  background: linear-gradient(-45deg, #FFF6F9, #FFE3EC, #FFF0F5, #FFDFEB);
+  background-size: 400% 400%;
+  animation: waveGradient 15s ease infinite;
+}
+
+.dark .animated-romantic-bg {
+  background: linear-gradient(-45deg, #0d0d0d, #140b0e, #1a0f12, #111111);
+  background-size: 400% 400%;
+  animation: waveGradient 15s ease infinite;
+}
